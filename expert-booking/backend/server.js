@@ -13,7 +13,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: [process.env.CLIENT_URL || 'http://localhost:3000', 'https://expert-booking-system-f1ggvqm4a-diyag5s-projects.vercel.app'],
     methods: ['GET', 'POST', 'PATCH'],
   },
 });
@@ -23,7 +23,7 @@ app.set('io', io);
 
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: [process.env.CLIENT_URL || 'http://localhost:3000', 'https://expert-booking-system-f1ggvqm4a-diyag5s-projects.vercel.app'],
   methods: ['GET', 'POST', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type'],
 }));
